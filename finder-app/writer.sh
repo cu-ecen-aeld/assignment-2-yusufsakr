@@ -6,6 +6,9 @@ writestr=$2
 dir=$(dirname "$writefile")
 filename=$(basename "$writefile")
 
+echo "Directory is : $dir"
+echo "File name is : $filename"
+
 if [ $# != 2 ]
 then
     echo "Lack of Arguments"
@@ -13,8 +16,9 @@ then
 fi
 
 if [ -d "$dir" ]
-then    
-    touch $writefile
+then
+    sudo chmod 777 $dir    
+    sudo touch $writefile
 
     if [ $? -eq 1 ]
     then 
@@ -26,7 +30,7 @@ then
     echo $writestr > $writefile 
     exit 0
 else
-    mkdir $dir
+    sudo mkdir -p $dir
 
     if [ $? -eq 1 ]
     then 
@@ -34,7 +38,9 @@ else
         exit 1
     fi
 
-        touch $writefile
+        echo "Directory Created Succesfully"
+        sudo chmod 777 $dir
+        sudo touch $writefile
 
     if [ $? -eq 1 ]
     then 
@@ -46,3 +52,5 @@ else
     echo $writestr > $writefile 
     exit 0
 fi
+
+exit 0
