@@ -14,7 +14,7 @@ fi
 
 if [ -d "$dir" ]
 then    
-    sudo touch $writefile
+    touch $writefile
 
     if [ $? -eq 1 ]
     then 
@@ -34,7 +34,7 @@ else
         exit 1
     fi
 
-    sudo touch $writefile
+        touch $writefile
 
     if [ $? -eq 1 ]
     then 
