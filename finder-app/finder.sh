@@ -17,6 +17,3 @@ else
     echo "Directory not found"
     exit 1
 fi
-
-#Lankash
-#lalala
