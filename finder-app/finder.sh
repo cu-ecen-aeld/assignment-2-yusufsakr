@@ -1,4 +1,5 @@
 #!/bin/sh
+# helooo
 
 filesdir=$1
 searchstr=$2
